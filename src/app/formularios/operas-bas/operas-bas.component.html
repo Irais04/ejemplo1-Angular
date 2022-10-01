@@ -1,0 +1,36 @@
+<br>
+<div class="row">
+    <div class="col-6">
+        <div class="mb-3">
+            <label class="form-label" for="">Numero </label>
+            <input class="form-control" [(ngModel)]="num1" name="num1" placeholder="Inserta un numero">
+        </div>
+
+        <!--div class="mb-3">
+            <label class="form-label" for="">Numero2</label>
+            <input class="form-control" [(ngModel)]="num2" name="num2" placeholder="Numero2">
+        </div>-->
+
+        <div class="mb-3">
+
+            <!--PARA QUE PUEDA SUMAR -->
+            <!--<button (click)="showTabla()" class="btn btn-dark">Calcular</button>-->
+
+            <button (click)="showTabla()" class="btn btn-dark">Calcular</button>
+        </div>
+
+        
+    </div>
+
+        <div class="col-6">
+            <h3 class="card-header">TABLA DEL {{num1}}</h3>
+            <div class="tablita" *ngFor="let resultado of text">
+
+              {{resultado}}
+
+            </div>
+        </div>
+   
+
+</div> 
+<br>

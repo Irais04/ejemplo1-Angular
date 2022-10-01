@@ -1,0 +1,11 @@
+thead{
+    color: black;
+}
+.btn-dark{
+    background-color: cadetblue;
+}
+.card-header{
+    background-color: slategray;
+    color: white;
+    margin-block-start: 50px;
+}

@@ -1,0 +1,60 @@
+<br>
+<div class="card">
+    <div class="card-header"> 
+        Lista de productos
+
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-2">Filtrar por:</div>
+            <div class="col-md-4">
+                <!--EL ngModel ES PARA QUE SSALGA LO QUE ESCRINIMOS EN LA TABLA-->
+                <input [(ngModel)]="listFilter" class="form-control" name="filter" type="text">
+            </div>
+           
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Filtro: {{listFilter}} </h3>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <button (click)="showImage()" *ngIf="showImage" type="button" class="btn btn-dark"> {{muestraImg? 'Ocultar ': 'Mostrar'}} Imagen</button>
+                        </th>
+                        <th>Modelo</th>
+                        <th>Descripcion</th>
+                        <th>Año</th>
+                        <th>Precio</th>
+                        <th>Marca</th>
+                        <th>Color</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--EL productoFiltro es para que se pueda buscar por la marca que lo asignamos en el archivo product-filtro.pipe-->
+                    
+                    <tr *ngFor="let coche of productos | productoFiltro: listFilter">
+                        <!--MEDIDAD DE LOS MARGENES SE DEFINEN LOS VALORES EN PRODUCT-LIST-COMPONEN.TS-->
+                        <td>
+                            <!--FUNCION DEL BOTON MOSTRAR-->
+                            <img *ngIf="muestraImg" [src]="coche.ImagenUrl"
+                            
+                            [title]="coche.Modelo"
+                            [style.width.px]="imageWidth"
+                            [style.margin.px]="imageMargin">
+                        </td>
+                        <td>{{coche.Modelo}}</td>
+                        <td>{{coche.Descripcion}}</td>
+                        <td>{{coche.year |date: 'dd/MM/yy'}}</td>
+                        <td>{{coche.Precio |currency }}</td>
+                        <td>{{coche.Marca}}</td>
+                        <td>{{coche.Color}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

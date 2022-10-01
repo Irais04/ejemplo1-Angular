@@ -1,0 +1,155 @@
+<br>
+<br>
+<br>
+<div class="row">
+    <div class="card">
+      <div class="card-header1 justify-content-center align-items-center text-center mt-3">
+        <h1>CINEPOLIS</h1>
+      </div>
+
+      <div class="card-body">
+
+        <div class="row justify-content-center align-items-center text-center">
+          <div class="col-5">
+
+
+            <div class="card">
+              <div class="card-form justify-content-center align-items-center text-center">
+                <h1 class="letras">BOLETOS </h1>
+              </div>
+
+
+              <div class="card-body">
+
+                <div class="row g-3 mt-1 align-items-center">
+                  <div class="col-5">
+                    <label for="" class="form-control">Nombre: </label>
+                  </div>
+
+
+                  <div class="col-auto">
+                    <input type="text" [(ngModel)]="name" name="name" class="form-control" placeholder="Inserte un nombre">
+                  </div>
+                </div>
+
+                
+                <div class="row g-3 mt-1 align-items-center">
+
+                  <div class="col-5">
+                    <label for="" class="form-control">Cantidad de Compradores: </label>
+                  </div>
+
+                  <div class="col-auto">
+                    <input type="text" [(ngModel)]="Compradores" name="Compradores"
+                      class="form-control">
+                  </div>
+
+                </div>
+
+
+                <div class="row g-3 mt-1 align-items-center">
+                  <div class="col-5">
+                    <label for="" class="form-control">Tarjeta Cineco :</label>
+                  </div>
+
+                  <div class="col-auto row">
+                    <div class="col-6 form-check">
+                      <br>
+                      <input type="radio" class="form-check-input" name="tarjeta"
+                        (click)="tarjetaResult(true)">
+                      <label for="" class="form-check-label"> Si </label>
+                    </div>
+
+                    <div class="col-6 form-check">
+                      <br>
+                      <input type="radio" class="form-check-input" checked name="tarjeta" (click)="tarjetaResult(true)" >
+                      <label for="" class="form-check-label"> No </label>
+                    </div>
+  
+  
+                  </div>
+                </div>
+
+
+                <div class="row g-3 mt-1 align-items-center">
+                  <div class="col-5">
+                    <label for="" class="form-control">Cantidad de Boletos</label>
+                  </div>
+
+                  <div class="col-auto">
+                    <input type="text" [(ngModel)]="numBoletos" name="numBoletos" class="form-control">
+  
+                  </div>
+                </div>
+                <br>
+                <h3>Precio por boleto: $12</h3>
+                <h3>Compras mayor a 5 boletos= 15%</h3> 
+                <h3>Compras de 3 a 4 boletos= 10%</h3>
+                <h3>Compras con tarjeta Cineco= 10%</h3>
+
+                <div class="card-body">
+                  <div class="row g-3 mt-1 align-items-center">
+                    <div class="col-3">
+                      <button class="btn btn-warning btn-lg" (click)="comprar()" >Comprar</button>
+                    </div>
+  
+                    <div class="col-1">
+                     
+                      <a href="#" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Salir</a>
+  
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+
+
+        <div class="col-sm-1"></div>
+          <div class="col-sm-5">
+
+            <div class="sal">
+              <div class="card">
+                <div class="card-body justify-content-center align-items-center text-center">
+                  <h1 class="letras">SALIDAS</h1>
+                </div>
+
+            
+                <div class="card-body">
+                  <div class="row g-3 align-items-center">
+                    <div class="col-3">
+                      <label for="" class="col-form-label">Valor a pagar: </label>
+                    </div>
+              </div>  
+                    <div class="col-auto">
+                      <input type="text" [(ngModel)]="total" name="total" class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          
+          
+          
+        </div>
+        <div *ngIf="ticket">
+            <div class="card-body justify-content-center align-items-center text-center"></div>
+            <h1 class="ticket">¡COMPRA REALIZADA CON EXITO!</h1>
+
+          </div>
+        
+
+
+
+
+      </div>
+    </div>
+    <div *ngIf="error" class="card1">
+    <div class="card-form justify-content-center align-items-center text-center">
+        <h1>ERROR INTENTE CON UN NUMERO MENOR DE BOLETOS </h1>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,22 @@
+.tablita{
+    background-color: cadetblue;
+    color: aliceblue;
+    width: 50 px;
+    text-align: center;
+    margin-left: 80px;
+    margin-right: 80px;
+
+
+}
+.card-header{
+    background-color: slategray;
+    color: white;
+    text-align: center;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-block-start: 50px;
+
+}
+.form-label{
+    margin-block-start: 50px;
+}
